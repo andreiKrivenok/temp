@@ -29,11 +29,11 @@ public class Car {
         return year;
     }
 
-    void info() {
+    public void info() {
         System.out.println("Это автомобиль");
     }
 
-    int yearDifference(int inputYear) {
+    public int yearDifference(int inputYear) {
         return Math.abs(inputYear - year);
     }
 }

@@ -6,11 +6,11 @@ public class Airplane {
     private int year;
     private int length;
     private int weight;
-    private int fuel;
+    private int fuel=0;
 
-    public void setFuel(int fuel) {
-        this.fuel = fuel;
-    }
+//    public void setFuel(int fuel) {
+//        this.fuel = fuel;
+//    }
 
     public int getFuel() {
         return fuel;
@@ -32,21 +32,23 @@ public class Airplane {
         this.weight = weight;
     }
 
-    public Airplane(String manufacturer, int year, int length, int weight, int fuel) {
+    public Airplane(String manufacturer, int year, int length, int weight) {
         this.manufacturer = manufacturer;
         this.year = year;
         this.length = length;
         this.weight = weight;
-        this.fuel = 0;
     }
 
-    void info() {
-        System.out.printf("Изготовитель: %s, год выпуска: %d, длина: %d, вес: %d," +
-                " количество топлива в баке: %d", manufacturer, year, length, weight, fuel);
-    }
-
-    int fillUp(int n) {
-        this.fuel = n;
+    public int fillUp(int n) {
+        fuel = fuel + n;
         return fuel;
     }
+
+    public void info() {
+        System.out.printf("Изготовитель: %s, год выпуска: %d, длина: %d, вес: %d," +
+                " количество топлива в баке: %d", manufacturer, year, length, weight, fuel);
+        System.out.println();
+    }
+
+
 }
